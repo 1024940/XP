@@ -1,8 +1,5 @@
-<?php include 'onderdelen/classes.php';?>
-<?php include 'onderdelen/session.php';?>
-<?php include 'onderdelen/header.php';?>
+
 <div id="sidebar" class="breed centreren">
     <h1>Bedankt</h1>
-    <p>Bedankt voor het bestellen. U ontvangt de bestelling per email.</p>
+    <p>Bedankt voor het bestellen. U ontvangt de bestelling binnen 5-7 werkdagen.</p>
 </div>
-<?php include 'onderdelen/footer.php';?>

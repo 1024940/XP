@@ -1,5 +1,5 @@
-<?php include 'onderdelen/classes.php';?>
-<?php include 'onderdelen/session.php';?>
+<?php include 'assets/classes/classespet.php';?>
+<?php include 'assets/classes/session.php';?>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $session->winkelwagen = new Winkelwagen();
@@ -60,12 +60,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Bestellen
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="bestellentshirt.php">T-Shirts</a></li>
+                        <li><a href="bestellenhemd.php">T-Shirts</a></li>
                         <li><a href="bestellenshirt.php">Shirts</a></li>
                         <li><a href="bestellenpet.php">Petten</a></li>
+                        <li><a href="custom.html">Custom Design</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Winkelwagen</a></li>
                 <li><a href="contact.php">Contact</a></li>
             </ul>
         </div>
@@ -86,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "<div class='pizza'>";
                 echo "<div class='container'>";
                 echo "<div class='row'>";
-                echo "<input type='hidden' name='pet[$nummer][soortPet]' value='" . $soortpet["ID_soort_shirt"] . "'>";
+                echo "<input type='hidden' name='pet[$nummer][soortPet]' value='" . $soortpet["ID_soort_pet"] . "'>";
                 echo "<input type='hidden' name='pet[$nummer][prijs]' value='" . $soortpet["prijs"] . "'>";
                 echo "<div class='col-md-6'><img class='left' src='assets/images/" . $soortpet["image"] . "' width='690' height='400' /></div>";
                 echo "<div class='col-md-6'><h2>" . $soortpet["naam"] . " (&euro;" .  $soortpet["prijs"] . ",-)</h2>";
@@ -99,7 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $typePets = designkingDb::getAllTypePets();
                 echo "<option value=''>Maak uw keuze</option>";
                 foreach ($typePets as $typePet) {
-                    echo "<option value='" . $typePet["ID_type_pizza"] . "'>" . $typePet["omschrijving"] . "</option>";
+                    echo "<option value='" . $typePet["ID_type_pet"] . "'>" . $typePet["omschrijving"] . "</option>";
                 }
                 echo "</select>";
                 //
@@ -120,7 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $nummer++;
             }
             ?>
-            <input value="Bestel" id="submit" type="submit"/>
+            <a class="btn btn-primary" href="nieuwklant.php" role="button">Bestel</a>
 
             <footer class="footer-distributed">
                 <div class="footer-left">
@@ -129,11 +129,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <a href="#">Home</a>
                         ·
                         <a href="#">Bestellen</a>
-                        ·
-                        <a href="#">Over ons</a>
-                        ·
-                        <a href="#">Winkelwagen</a>
-                        ·
+                        .
                         <a href="#">Contact</a>
                     </p>
                     <p class="footer-company-name">Ontworpen door Design Kings &copy; 2017</p>

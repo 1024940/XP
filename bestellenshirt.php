@@ -1,5 +1,5 @@
-<?php include 'onderdelen/classes.php';?>
-<?php include 'onderdelen/session.php';?>
+<?php include 'assets/classes/classes.php';?>
+<?php include 'assets/classes/session.php';?>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $session->winkelwagen = new Winkelwagen();
@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     if ($bestellingOke == true and $geenshirts == false) {
         //$session->winkelwagen->printPizzas();
-        header('Location:kiesklant.php');
+        header('Location: kiesklant.php');
     }
     else {
         if ($bestellingOke == false) {
@@ -60,12 +60,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Bestellen
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="bestellentshirt.php">T-Shirts</a></li>
+                        <li><a href="bestellenhemd.php">T-Shirts</a></li>
                         <li><a href="bestellenshirt.php">Shirts</a></li>
                         <li><a href="bestellenpet.php">Petten</a></li>
+                        <li><a href="custom.html">Custom Design</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Winkelwagen</a></li>
                 <li><a href="contact.php">Contact</a></li>
             </ul>
         </div>
@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //
         // Soorten pizza
         //
-        $soortshirts = designkingDb::getAllSoortenShirts();
+        $soortshirts = designkingDb::getAllSoortenshirt();
         foreach ($soortshirts as $soortshirt) {
             echo "<div class='box1'>";
             echo "<div class='pizza'>";
@@ -96,7 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             //
             echo "<label>Soort shirt</label><br>";
             echo "<select name='shirt[$nummer][typeShirt]'>";
-            $typeShirts = designkingDb::getAllTypeShirts();
+            $typeShirts = designkingDb::getAllTypeshirt();
             echo "<option value=''>Maak uw keuze</option>";
             foreach ($typeShirts as $typeShirt) {
                 echo "<option value='" . $typeShirt["ID_type_pizza"] . "'>" . $typeShirt["omschrijving"] . "</option>";
@@ -120,7 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $nummer++;
         }
         ?>
-        <input value="Bestel" id="submit" type="submit"/>
+        <a class="btn btn-primary" href="nieuwklant.php" role="button">Bestel</a>
 
         <footer class="footer-distributed">
             <div class="footer-left">
@@ -129,11 +129,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <a href="#">Home</a>
                     ·
                     <a href="#">Bestellen</a>
-                    ·
-                    <a href="#">Over ons</a>
-                    ·
-                    <a href="#">Winkelwagen</a>
-                    ·
+                    .
                     <a href="#">Contact</a>
                 </p>
                 <p class="footer-company-name">Ontworpen door Design Kings &copy; 2017</p>

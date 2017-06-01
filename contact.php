@@ -25,12 +25,12 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Bestellen
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">T-Shirts</a></li>
-                        <li><a href="#">Shirts</a></li>
-                        <li><a href="#">Petten</a></li>
+                        <li><a href="bestellenhemd.php">T-Shirts</a></li>
+                        <li><a href="bestellenshirt.php">Shirts</a></li>
+                        <li><a href="bestellenpet.php">Petten</a></li>
+                        <li><a href="custom.html">Custom Design</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Winkelwagen</a></li>
                 <li><a href="contact.php">Contact</a></li>
             </ul>
         </div>
@@ -54,7 +54,7 @@
         <div class="footer-left">
             <img src="assets/images/logo.png" style="margin-left: -80px; margin-top: -80px;" height="300">
             <p class="footer-links" style="margin-top: -50px;">
-                <a href="#">Home</a>
+                <a href="index.php">Home</a>
                 ·
                 <a href="#">Bestellen</a>
                 ·

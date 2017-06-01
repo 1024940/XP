@@ -1,18 +1,17 @@
-<?php include 'onderdelen/classes.php';?>
-<?php include 'onderdelen/session.php';?>
+<?php include 'assets/classes/classes.php';?>
+<?php include 'assets/classes/session.php';?>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (strlen($_POST['naam']) > 0 and strlen($_POST['email']) > 0 and strlen($_POST['adres']) > 0 and strlen($_POST['telefoonnummer']) > 0) {
-        $klantID = SopranosDb::slaKlantOp($_POST['naam'], $_POST['email'], $_POST['adres'], $_POST['telefoonnummer']);
+        $klantID = designkingDb::slaKlantOp($_POST['naam'], $_POST['email'], $_POST['adres'], $_POST['telefoonnummer']);
         $session->winkelwagen->klantID = $klantID;
-        header('Location: kiesvestiging.php');
+        header('Location: bestelling.php');
     }
     else {
         $foutboodschap = "Vul alle velden in";
     }
 }
 ?>
-<?php include 'onderdelen/header.php';?>
 <div id="sidebar" class="breed centreren">
     <h1>Nieuwe klant</h1>
     <br>
@@ -30,4 +29,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input value="Registreer" id="submit" type="submit"/>
     </form>
 </div>
-<?php include 'onderdelen/footer.php';?>

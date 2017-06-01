@@ -24,12 +24,12 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Bestellen
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="bestellentshirt.php">T-Shirts</a></li>
+                        <li><a href="bestellenhemd.php">T-Shirts</a></li>
                         <li><a href="bestellenshirt.php">Shirts</a></li>
                         <li><a href="bestellenpet.php">Petten</a></li>
+                        <li><a href="custom.html">Custom Design</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Winkelwagen</a></li>
                 <li><a href="contact.php">Contact</a></li>
             </ul>
         </div>
@@ -43,19 +43,19 @@
                 <!-- Slideshow 1 -->
                 <div class="col-lg-4">
                     <h1 class="tshirts" style="margin-left:40%;">T-Shirts</h1>
-                    <a href="#" class="hvr-grow">
+                    <a href="bestellenhemd.php" class="hvr-grow">
                         <img src="assets/images/tshirt.png" alt="">
                     </a>
                 </div>
                 <div class="col-lg-4">
-                    <h1 class="shirts" style="margin-left: 40%;">Petten</h1>
-                    <a href="#" class="hvr-grow">
+                    <h1 class="shirts" style="margin-left: 40%;">Caps</h1>
+                    <a href="bestellenpet.php" class="hvr-grow">
                         <img src="assets/images/cap.png" alt="">
                     </a>
                 </div>
                 <div class="col-lg-4">
                     <h1 class="caps" style="margin-left: 40%;">Shirts</h1>
-                    <a href="#" class="hvr-grow">
+                    <a href="bestellenshirt.php" class="hvr-grow">
                         <img src="assets/images/shirt.png" alt="">
                     </a>
 
@@ -67,11 +67,11 @@
         <div class="footer-left">
             <img src="assets/images/logo.png" style="margin-left: -80px; margin-top: -80px;" height="300">
             <p class="footer-links" style="margin-top: -50px;">
-                <a href="#">Home</a>
+                <a href="index.php">Home</a>
                 ·
-                <a href="#">Bestellen</a>
+                <a href="bestellenshirt.php">Bestellen</a>
                 ·
-                <a href="#">Contact</a>
+                <a href="contact.php">Contact</a>
             </p>
             <p class="footer-company-name">Ontworpen door Design Kings &copy; 2017</p>
         </div>
@@ -86,7 +86,7 @@
             </div>
             <div>
                 <i class="fa fa-envelope"></i>
-                <p><a href="mailto:support@company.com">support@designkings.com</a></p>
+                <p><a href="mailto:support@company.com">support@designkings.nl</a></p>
             </div>
         </div>
         <div class="footer-right">

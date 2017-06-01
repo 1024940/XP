@@ -1,5 +1,5 @@
-<?php include 'onderdelen/classes.php';?>
-<?php include 'onderdelen/session.php';?>
+<?php include 'assets/classes/classes.php';?>
+<?php include 'assets/classes/session.php';?>
 <?php
 // $session->winkelwagen->printPizzas();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

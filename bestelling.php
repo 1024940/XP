@@ -1,5 +1,5 @@
-<?php include 'onderdelen/classes.php';?>
-<?php include 'onderdelen/session.php';?>
+<?php include 'assets/classes/classes.php';?>
+<?php include 'assets/classes/session.php';?>
 <?php
 // $session->winkelwagen->printPizzas();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -11,12 +11,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header('Location: Bedankt.php');
 }
 ?>
-<?php include 'onderdelen/header.php';?>
 <div id="sidebar" class="breed">
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
      <h3>Uw gegevens</h3>
     <?php
-    $klanten = SopranosDb::getKlantByID($session->winkelwagen->klantID);
+    $klanten = designkingDb::getKlantByID($session->winkelwagen->klantID);
     foreach ($klanten as $klant) {
         echo "<label class=\"vasteBreedte\">Naam</label>" . $klant["naam"] . "<br>";
         echo "<label class=\"vasteBreedte\">Adres</label>" . $klant["adres"] . "<br>";
@@ -35,27 +34,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </tr>
         <?php
         $totaalPrijs = 0;
-        foreach ($session->winkelwagen->pizzas as $pizza) {
+        foreach ($session->winkelwagen->shirts as $shirt) {
             echo "<tr>";
             echo "<td>";
-            $soortenpizzas = SopranosDb::getSoortByID($pizza->soortID);
-            foreach ($soortenpizzas as $soortenpizza) {
-                echo $soortenpizza["naam"];
+            $soortenshirts = designkingDb::getSoortByID($shirt->soortID);
+            foreach ($soortenshirts as $soortenshirt) {
+                echo $soortenshirt["naam"];
             }
             echo "</td>";
             echo "<td>";
-            $typepizzas = SopranosDb::getTypeByID($pizza->typeID);
-            foreach ($typepizzas as $typepizza) {
-                echo $typepizza["omschrijving"];
+            $typeshirts = designkingDb::getTypeByID($shirt->typeID);
+            foreach ($typeshirts as $typeshirt) {
+                echo $typeshirt["omschrijving"];
             }
             echo "</td>";
             echo "<td>";
-            echo  $pizza->aantal;
+            echo  $shirt->aantal;
             echo "</td>";
             echo "<td class='prijs'>";
-            $pizzaPrijs = $pizza->berekenTotaalPrijs();
-            $totaalPrijs = $totaalPrijs + $pizzaPrijs;
-            echo number_format($pizzaPrijs, 2);
+            $shirtPrijs = $shirt->berekenTotaalPrijs();
+            $totaalPrijs = $totaalPrijs + $shirtPrijs;
+            echo number_format($shirtPrijs, 2);
             echo "</td>";
             echo "</tr>";
         }
@@ -69,15 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </table>
     <br>
 
-    <h3>Uw vestiging</h3>
-    <?php
-    $vestigingen = SopranosDb::getVestigingByID($session->winkelwagen->vestigingID);
-    foreach ($vestigingen as $vestiging) {
-        echo "<label class=\"vasteBreedte\">Vestiging</label>Sopranos pizza " . $vestiging["naam"] . "<br>";
-    }
-    ?>
     <br>
-    <input value="Bestel" class="rechts" id="submit" type="submit"/>
+        <a class="btn btn-primary" href="betalen.html" role="button">Afrekenen</a>
     </form>
 </div>
-<?php include 'onderdelen/footer.php';?>
